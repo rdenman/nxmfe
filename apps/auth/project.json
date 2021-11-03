@@ -14,7 +14,14 @@
         "polyfills": "apps/auth/src/polyfills.ts",
         "tsConfig": "apps/auth/tsconfig.app.json",
         "assets": ["apps/auth/src/favicon.ico", "apps/auth/src/assets"],
-        "styles": ["apps/auth/src/styles.css"],
+        "styles": [
+          "apps/auth/src/styles.css",
+          {
+            "input": "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+            "bundleName": "angular_material_theme",
+            "inject": false
+          }
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/auth/webpack.config.js"

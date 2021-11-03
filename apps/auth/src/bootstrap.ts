@@ -8,9 +8,21 @@ if (environment.production) {
   enableProdMode();
 }
 
+const loadStyle = (id: string, href: string) => {
+  const style = document.createElement('link');
+  style.rel = 'stylesheet';
+  style.id = id;
+  style.href = href;
+  document.getElementsByTagName('head')[0].appendChild(style);
+};
+
 const mount = (el: Element) => {
   el.innerHTML = `<nxmfe-root />`;
   platformBrowserDynamic().bootstrapModule(AppModule);
+  loadStyle(
+    'angular_material_theme',
+    'http://localhost:4202/angular_material_theme.css'
+  );
 };
 
 if (process.env.NODE_ENV === 'development') {
