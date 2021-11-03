@@ -24,3 +24,8 @@ Run `npm start` to fire up the apps.
    Add some special routing logic so the container and marketing apps stay in sync.
    Install the Material Icons: `npm i @mui/icons-material`.
    Build out the Copyright, Landing and Pricing components.
+6. Create `webpack.config.js` in both the container and marketing apps.
+   Point each app's `webpackConfig` in its respective `project.json` to the appropriate configuration file.
+   Make sure to explictly set a unique port for each app.
+   Add `decl.d.ts` to container and declare the marketing module.
+   Create the MarketingApp component which loads up the MFE. Lazily load the component for the base route.

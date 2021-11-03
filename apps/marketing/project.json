@@ -11,7 +11,7 @@
         "outputPath": "dist/apps/marketing",
         "index": "apps/marketing/src/index.html",
         "baseHref": "/",
-        "main": "apps/marketing/src/main.tsx",
+        "main": "apps/marketing/src/main.ts",
         "polyfills": "apps/marketing/src/polyfills.ts",
         "tsConfig": "apps/marketing/tsconfig.app.json",
         "assets": [
@@ -20,7 +20,7 @@
         ],
         "styles": ["apps/marketing/src/styles.css"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "apps/marketing/webpack.config"
       },
       "configurations": {
         "production": {
@@ -43,7 +43,8 @@
       "executor": "@nrwl/web:dev-server",
       "options": {
         "buildTarget": "marketing:build",
-        "hmr": true
+        "hmr": true,
+        "port": 4201
       },
       "configurations": {
         "production": {
