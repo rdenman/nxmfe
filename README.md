@@ -15,3 +15,7 @@ Run `npm start` to fire up the apps.
 3. Install more dependencies: `npm i @mui/material @emotion/react @emotion/styled`.
    Create `bootstrap.tsx`, update `main.tsx` and move app-specific code to `App.tsx`.
    Build the Header component and add some dummy routes.
+4. Generate the marketing app: `npx nx g @nrwl/react:app marketing`.
+   Make sure you add React Router to the marketing app.
+   Create `bootstrap.tsx`, update `main.tsx` and move app-specific code to `App.tsx`.
+   Update the `root` id in `index.html` to `_marketing-app`.
