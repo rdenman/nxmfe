@@ -5,6 +5,7 @@ import { Redirect, Route, Router, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Progress from './components/Progress';
 
+const AuthAppLazy = lazy(() => import('./components/AuthApp'));
 const MarketingAppLazy = lazy(() => import('./components/MarketingApp'));
 
 const history = createBrowserHistory();
@@ -24,7 +25,7 @@ const App: FC = () => {
       <Header isSignedIn={isSignedIn} onSignOut={() => setIsSignedIn(false)} />
       <Suspense fallback={<Progress />}>
         <Switch>
-          <Route path="/auth">Auth</Route>
+          <Route path="/auth" component={AuthAppLazy} />
           <Route path="/dashboard">
             {!isSignedIn && <Redirect to="/" />}
             Dashboard
