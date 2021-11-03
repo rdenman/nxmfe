@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { Box } from '@mui/system';
 import { FC } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import Copyright from './Copyright';
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -43,14 +44,18 @@ const Landing: FC = () => {
             <Box sx={{ mt: 4 }}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
-                  <Link href="/pricing">
+                  <Link component={RouterLink} to="/pricing">
                     <Button variant="contained" color="primary">
                       Pricing
                     </Button>
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/pricing" sx={{ textDecoration: 'none' }}>
+                  <Link
+                    component={RouterLink}
+                    to="/pricing"
+                    sx={{ textDecoration: 'none' }}
+                  >
                     <Button variant="outlined" color="primary">
                       Pricing
                     </Button>

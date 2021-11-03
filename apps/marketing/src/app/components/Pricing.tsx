@@ -185,7 +185,12 @@ const Pricing: FC = () => {
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
+                    <Link
+                      component={RouterLink}
+                      to="/"
+                      variant="subtitle1"
+                      color="textSecondary"
+                    >
                       {item}
                     </Link>
                   </li>
