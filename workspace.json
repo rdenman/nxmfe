@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "auth": "apps/auth",
     "container": "apps/container",
     "marketing": "apps/marketing"
   }

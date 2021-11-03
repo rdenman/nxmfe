@@ -29,3 +29,6 @@ Run `npm start` to fire up the apps.
    Make sure to explictly set a unique port for each app.
    Add `decl.d.ts` to container and declare the marketing module.
    Create the MarketingApp component which loads up the MFE. Lazily load the component for the base route.
+7. Add the Angular schematic to the workspace: `npm i -DE @nrwl/angular`.
+   Generate an auth app: `npx nx g @nrwl/angular:app auth`.
+   Make sure you add routing to the auth app.
