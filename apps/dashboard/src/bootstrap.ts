@@ -17,16 +17,16 @@ const loadStyle = (id: string, href: string) => {
 };
 
 const mount = (el: Element) => {
-  el.innerHTML = `<nxmfe-auth-root />`;
+  el.innerHTML = `<nxmfe-dashboard-root />`;
   platformBrowserDynamic().bootstrapModule(AppModule);
   loadStyle(
     'angular_material_theme',
-    'http://localhost:4202/angular_material_theme.css'
+    'http://localhost:4203/angular_material_theme.css'
   );
 };
 
 if (process.env.NODE_ENV === 'development') {
-  const el = document.querySelector('#_auth-app');
+  const el = document.querySelector('#_dashboard-app');
   if (el) {
     mount(el);
   }

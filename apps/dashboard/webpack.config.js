@@ -5,7 +5,7 @@ module.exports = (config, context) => {
   return {
     ...config,
     output: {
-      uniqueName: 'container',
+      uniqueName: 'dashboard',
       publicPath: 'auto',
     },
     optimization: {
@@ -14,12 +14,11 @@ module.exports = (config, context) => {
     plugins: [
       ...config.plugins,
       new ModuleFederationPlugin({
-        name: 'container',
+        name: 'dashboard',
+        filename: 'remoteEntry.js',
         shared: dependencies,
-        remotes: {
-          marketing: 'marketing@http://localhost:4201/remoteEntry.js',
-          auth: 'auth@http://localhost:4202/remoteEntry.js',
-          dashboard: 'dashboard@http://localhost:4203/remoteEntry.js',
+        exposes: {
+          './DashboardApp': 'apps/dashboard/src/bootstrap',
         },
       }),
     ],

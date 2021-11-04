@@ -3,6 +3,7 @@
   "projects": {
     "auth": "apps/auth",
     "container": "apps/container",
+    "dashboard": "apps/dashboard",
     "marketing": "apps/marketing"
   }
 }

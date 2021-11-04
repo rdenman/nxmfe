@@ -1,12 +1,13 @@
 import { CssBaseline } from '@mui/material';
 import { createBrowserHistory } from 'history';
 import { FC, lazy, Suspense, useEffect, useState } from 'react';
-import { Redirect, Route, Router, Switch } from 'react-router-dom';
+import { Route, Router, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Progress from './components/Progress';
 
 const AuthAppLazy = lazy(() => import('./components/AuthApp'));
 const MarketingAppLazy = lazy(() => import('./components/MarketingApp'));
+const DashboardAppLazy = lazy(() => import('./components/DashboardApp'));
 
 const history = createBrowserHistory();
 
@@ -27,8 +28,8 @@ const App: FC = () => {
         <Switch>
           <Route path="/auth" component={AuthAppLazy} />
           <Route path="/dashboard">
-            {!isSignedIn && <Redirect to="/" />}
-            Dashboard
+            {/* {!isSignedIn && <Redirect to="/" />} */}
+            <DashboardAppLazy />
           </Route>
           <Route path="/" component={MarketingAppLazy} />
         </Switch>
