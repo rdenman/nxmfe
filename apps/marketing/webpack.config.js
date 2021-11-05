@@ -19,6 +19,7 @@ module.exports = (config, context) => {
         shared: dependencies,
         exposes: {
           './MarketingApp': './src/bootstrap',
+          './MarketingBlurb': './src/bootstrap-blurb',
         },
       }),
     ],
