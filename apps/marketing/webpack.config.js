@@ -17,6 +17,9 @@ module.exports = (config, context) => {
         name: 'marketing',
         filename: 'remoteEntry.js',
         shared: dependencies,
+        remotes: {
+          auth: 'auth@http://localhost:4202/remoteEntry.js',
+        },
         exposes: {
           './MarketingApp': './src/bootstrap',
           './MarketingBlurb': './src/bootstrap-blurb',

@@ -22,6 +22,7 @@ module.exports = (config, context) => {
         },
         exposes: {
           './AuthApp': 'apps/auth/src/bootstrap',
+          './UserInfo': 'apps/auth/src/bootstrap-user-info',
         },
       }),
     ],

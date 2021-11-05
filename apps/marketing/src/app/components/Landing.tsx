@@ -10,13 +10,20 @@ import {
   Typography,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import { FC } from 'react';
+import { mount } from 'auth/UserInfo';
+import { FC, useEffect, useRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import Copyright from './Copyright';
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const Landing: FC = () => {
+  const userInfoRef = useRef(null);
+
+  useEffect(() => {
+    mount(userInfoRef.current);
+  }, []);
+
   return (
     <>
       <Container component="main">
@@ -41,6 +48,7 @@ const Landing: FC = () => {
               contents, the creator, etc. Make it short and sweet, but not too
               short so folks don&apos;t simply skip over it entirely.
             </Typography>
+            <div ref={userInfoRef} />
             <Box sx={{ mt: 4 }}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
